@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>UbiChef</title>
+<meta property="og:title" content="UbiChef'te bir tarif">
+<meta property="og:description" content="Bir arkadaşın sana UbiChef'ten bir tarif gönderdi. / A friend sent you a recipe from UbiChef.">
+<style>
+  /* Opens the shared recipe in the UbiChef app. On purpose, this page never shows the recipe itself. */
+  :root { --bg:#faf7f0; --fg:#1f1a17; --muted:#5c534c; --accent:#a8283a; --card:#fff; --line:#e6ddd0; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#151210; --fg:#f2ece4; --muted:#b5aba1; --accent:#f0a3ad; --card:#1f1b18; --line:#3a332d; color-scheme:dark; } }
+  :root[data-theme="dark"] { --bg:#151210; --fg:#f2ece4; --muted:#b5aba1; --accent:#f0a3ad; --card:#1f1b18; --line:#3a332d; color-scheme:dark; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 "Segoe UI", system-ui, sans-serif; }
+  main { max-width:30rem; margin:0 auto; padding:56px 16px; text-align:center; }
+  svg { width:84px; height:84px; }
+  h1 { font-size:26px; margin:18px 0 6px; text-wrap:balance; }
+  p { color:var(--muted); margin:0 0 22px; }
+  a.btn { display:block; padding:15px 18px; border-radius:16px; text-decoration:none; font-weight:700; margin:10px 0; }
+  a.primary { background:#a8283a; color:#fff; }
+  a.ghost { border:1.5px solid var(--line); color:var(--fg); background:var(--card); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  small { color:var(--muted); display:block; margin-top:22px; }
+</style>
+</head>
+<body>
+<main>
+  <svg viewBox="0 0 108 108" aria-hidden="true">
+    <rect width="108" height="108" rx="24" fill="#a8283a"/>
+    <circle cx="54" cy="54" r="27" fill="none" stroke="#fff" stroke-width="3.6"/>
+    <circle cx="43.5" cy="47" r="6.4" fill="#fff"/><circle cx="62.5" cy="46" r="4.8" fill="#fff"/><circle cx="56" cy="62.5" r="5.6" fill="#fff"/>
+  </svg>
+  <h1 id="h">Sana bir tarif gönderildi</h1>
+  <p id="p">Tarifi görmek için UbiChef'te aç.</p>
+  <a class="btn primary" id="open" href="#">UbiChef'te aç</a>
+  <a class="btn ghost" id="get" href="https://play.google.com/store/apps/details?id=com.uberbora.ubichef">Google Play'den indir</a>
+  <small id="s">UbiChef şimdilik yalnızca Android'de.</small>
+</main>
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var id = q.get('id'), m = q.get('m');
+    var ok = /^[A-Za-z0-9_]{1,40}$/;
+    var path = id && ok.test(id) ? 'recipe/' + id : m && ok.test(m) ? 'meal/' + m : '';
+    var play = 'https://play.google.com/store/apps/details?id=com.uberbora.ubichef';
+    var en = !/^tr\b/i.test(navigator.language || '');
+    if (en) {
+      document.documentElement.lang = 'en';
+      document.getElementById('h').textContent = 'Someone sent you a recipe';
+      document.getElementById('p').textContent = 'Open it in UbiChef to see it.';
+      document.getElementById('open').textContent = 'Open in UbiChef';
+      document.getElementById('get').textContent = 'Get it on Google Play';
+      document.getElementById('s').textContent = 'UbiChef is on Android for now.';
+    }
+    var openBtn = document.getElementById('open');
+    if (!path) { openBtn.style.display = 'none'; return; }
+    var android = /Android/i.test(navigator.userAgent);
+    if (!android) { openBtn.style.display = 'none'; return; }
+    // Android: open the app at the recipe; Chrome falls back to the Play Store when UbiChef isn't installed.
+    var intent = 'intent://' + path + '#Intent;scheme=ubichef;package=com.uberbora.ubichef;S.browser_fallback_url=' + encodeURIComponent(play) + ';end';
+    openBtn.href = intent;
+    location.replace(intent);
+  })();
+</script>
+</body>
+</html>

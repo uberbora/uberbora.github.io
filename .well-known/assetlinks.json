@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.uberbora.ubichef",
+    "sha256_cert_fingerprints": [
+      "D2:2F:86:D9:B3:A5:6D:5F:9B:D4:9C:17:35:56:87:BA:22:60:61:0C:17:60:AA:0D:44:0D:9F:BE:9F:98:56:19"
+    ]
+  }
+}]

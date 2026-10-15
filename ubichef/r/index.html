@@ -7,25 +7,26 @@
 <title>UbiChef</title>
 <meta property="og:title" content="UbiChef'te bir tarif">
 <meta property="og:description" content="Bir arkadaşın sana UbiChef'ten bir tarif gönderdi. / A friend sent you a recipe from UbiChef.">
+<link rel="icon" href="../../assets/uberbora.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
 <style>
   /* Opens the shared recipe in the UbiChef app. On purpose, this page never shows the recipe itself. */
-  :root { --bg:#faf7f0; --fg:#1f1a17; --muted:#5c534c; --accent:#a8283a; --card:#fff; --line:#e6ddd0; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#151210; --fg:#f2ece4; --muted:#b5aba1; --accent:#f0a3ad; --card:#1f1b18; --line:#3a332d; color-scheme:dark; } }
-  :root[data-theme="dark"] { --bg:#151210; --fg:#f2ece4; --muted:#b5aba1; --accent:#f0a3ad; --card:#1f1b18; --line:#3a332d; color-scheme:dark; }
-  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 "Segoe UI", system-ui, sans-serif; }
-  main { max-width:30rem; margin:0 auto; padding:56px 16px; text-align:center; }
-  svg { width:84px; height:84px; }
-  h1 { font-size:26px; margin:18px 0 6px; text-wrap:balance; }
-  p { color:var(--muted); margin:0 0 22px; }
-  a.btn { display:block; padding:15px 18px; border-radius:16px; text-decoration:none; font-weight:700; margin:10px 0; }
-  a.primary { background:#a8283a; color:#fff; }
-  a.ghost { border:1.5px solid var(--line); color:var(--fg); background:var(--card); }
-  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-  small { color:var(--muted); display:block; margin-top:22px; }
+  .handoff { max-width: 26rem; margin: 0 auto; padding: clamp(40px, 9vw, 88px) 0; text-align: center; }
+  .handoff > svg { width: 88px; height: 88px; margin: 0 auto 22px; }
+  .handoff h1 { font-size: clamp(30px, 7vw, 40px); margin-bottom: 10px; }
+  .handoff p { color: var(--muted); }
+  .handoff .btn { display: flex; justify-content: center; width: 100%; margin-top: 12px; }
+  .handoff small { display: block; margin-top: 24px; color: var(--muted); font-size: 15px; }
 </style>
 </head>
 <body>
-<main>
+<header class="on-sun">
+  <div class="wrap topbar"><a class="brand" href="../../"><svg viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true"><rect width="32" height="32" fill="#E1C02C"/><path d="M6 6h5v1h-5zM21 6h5v1h-5zM5 7h7v14h-7zM20 7h7v14h-7zM5 21h8v1h-8zM19 21h8v1h-8zM5 22h9v1h-9zM18 22h9v1h-9zM5 23h22v3h-22zM6 26h20v1h-20zM7 27h18v1h-18zM8 28h16v1h-16z"/></svg>uberbora</a></div>
+</header>
+<main class="wrap handoff">
   <svg viewBox="0 0 108 108" aria-hidden="true">
     <rect width="108" height="108" rx="24" fill="#a8283a"/>
     <circle cx="54" cy="54" r="27" fill="none" stroke="#fff" stroke-width="3.6"/>
@@ -33,8 +34,8 @@
   </svg>
   <h1 id="h">Sana bir tarif gönderildi</h1>
   <p id="p">Tarifi görmek için UbiChef'te aç.</p>
-  <a class="btn primary" id="open" href="#">UbiChef'te aç</a>
-  <a class="btn ghost" id="get" href="https://play.google.com/store/apps/details?id=com.uberbora.ubichef">Google Play'den indir</a>
+  <a class="btn sun px" id="open" href="#">UbiChef'te aç</a>
+  <a class="btn quiet" id="get" href="https://play.google.com/store/apps/details?id=com.uberbora.ubichef">Google Play'den indir</a>
   <small id="s">UbiChef şimdilik yalnızca Android'de.</small>
 </main>
 <script>

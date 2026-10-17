@@ -197,6 +197,41 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 .tile h3 a { text-decoration: none; }
 .tile h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
+/* ---------------------------------------------------------------- roadmaps */
+.rm-hero { padding-bottom: clamp(36px, 6vw, 64px); }
+.rm-hero h1 { margin: 14px 0 18px; }
+.rm-app { text-decoration: none; }
+.rm-app:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.rm-progress { display: flex; height: 12px; max-width: 36rem; margin: 28px 0 10px; background: #2E2E2B; }
+.rm-progress .d { background: var(--sun); }
+.rm-progress .n { background: repeating-linear-gradient(90deg, var(--sun) 0 6px, transparent 6px 12px); }
+.rm-count { margin-bottom: 4px; }
+.rm-body { padding-block: clamp(28px, 5vw, 56px) clamp(48px, 7vw, 88px); }
+.rm-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(24px, 4vw, 40px); }
+.rm-filters button {
+  font: 700 15px/1 var(--display); padding: 10px 14px; cursor: pointer;
+  background: transparent; color: var(--text); border: 2px solid var(--text);
+}
+.rm-filters button[aria-pressed="true"] { background: var(--text); color: var(--paper); }
+.rm-phase { padding-block: clamp(24px, 4vw, 40px); border-top: 2px solid var(--line); }
+.rm-phase[hidden], .rm-item[hidden] { display: none; }
+.rm-head { display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: start; margin-bottom: 20px; }
+.rm-num { display: grid; place-items: center; height: 52px; background: var(--sun); color: var(--black); font: 800 20px/1 var(--display); --s: 4px; }
+.rm-head h2 { font-size: clamp(24px, 3vw, 32px); margin: 4px 0 6px; }
+.rm-head p { margin: 0; }
+.rm-list { list-style: none; margin: 0 0 0 82px; padding: 0; display: grid; gap: 4px; }
+.rm-item { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.rm-item:last-child { border-bottom: 0; }
+.rm-item h3 { font-size: 19px; margin-bottom: 4px; }
+.rm-item p { margin: 0; color: var(--muted); font-size: 17px; }
+.chip { justify-self: start; font: 700 13px/1 var(--display); padding: 7px 9px; border: 2px solid var(--text); margin-top: 2px; white-space: nowrap; }
+.chip.done { background: var(--text); color: var(--paper); }
+.chip.next { background: var(--sun); color: var(--black); border-color: var(--sun); }
+.chip.plan { background: transparent; }
+.chip.idea { background: transparent; border-style: dashed; color: var(--muted); border-color: var(--muted); }
+.rm-item[data-s="done"] h3 { color: var(--muted); }
+.btnrow .rm-textlink { margin-left: 6px; }
+
 /* ---------------------------------------------------------------- small screens */
 @media (max-width: 880px) {
   .featured, .install, .hero-split, .promise { grid-template-columns: 1fr; }
@@ -207,6 +242,10 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 @media (max-width: 520px) {
   body { font-size: 17px; }
   .btn { width: 100%; justify-content: center; }
+  .rm-head { grid-template-columns: 48px 1fr; gap: 14px; }
+  .rm-num { height: 44px; font-size: 17px; }
+  .rm-list { margin-left: 0; }
+  .rm-item { grid-template-columns: 1fr; gap: 8px; }
   .reqs { grid-template-columns: 1fr; gap: 2px 0; }
   .reqs dd { margin-bottom: 10px; }
 }

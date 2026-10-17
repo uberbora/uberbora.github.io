@@ -269,7 +269,7 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 .ix-what { font-size: 14px; line-height: 1.3; margin-top: 2px; }
 
 /* bands */
-.band { padding-top: clamp(56px, 8vw, 104px); color: #fff; scroll-margin-top: 0; }
+.band { padding-top: calc(clamp(52px, 7vw, 96px) + var(--u) * 3); color: #fff; scroll-margin-top: 0; }
 .band .wrap.band-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: clamp(28px, 5vw, 80px); align-items: center; padding-bottom: clamp(48px, 7vw, 96px); }
 .band:nth-of-type(odd) .band-text { order: 0; }
 .band-ubireader .band-text { order: 2; }

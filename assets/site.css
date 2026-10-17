@@ -264,7 +264,8 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 .app-index a:hover { background: rgba(0,0,0,.12); box-shadow: inset 0 0 0 2px var(--black); }
 .app-index a:focus-visible { outline: 3px solid var(--black); outline-offset: 2px; }
 .app-index svg { width: 40px; height: 40px; grid-row: span 2; }
-.ix-name { font: 800 17px/1.1 var(--display); font-stretch: 110%; }
+.ix-name { font: 800 17px/1.1 var(--display); font-stretch: 110%; min-width: 0; overflow-wrap: anywhere; }
+.ix-what { min-width: 0; }
 .ix-what { font-size: 14px; line-height: 1.3; margin-top: 2px; }
 
 /* bands */
@@ -374,7 +375,10 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 @media (max-width: 880px) {
   .featured, .install, .hero-split, .promise { grid-template-columns: 1fr; }
   .hero-split figure { width: min(250px, 80%); }
-  .app-index ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .app-index ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .app-index a { grid-template-columns: 1fr; row-gap: 4px; align-content: start; padding: 16px; }
+  .app-index svg { grid-row: auto; margin-bottom: 8px; }
+  .ix-name { font-stretch: 100%; }
   .band .wrap.band-grid { grid-template-columns: 1fr; }
   .band-ubireader .band-text { order: 0; }
   .band-art.phone { width: min(260px, 76%); }

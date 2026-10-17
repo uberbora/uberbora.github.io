@@ -6,88 +6,36 @@
 <title>UbiTracker Privacy Policy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-<style>
-  /* Layout: one readable column, a slim language switch, section anchors for linking from Google Play. */
-  :root {
-    --bg: #f5f7fa;
-    --surface: #ffffff;
-    --fg: #17212b;
-    --muted: #4c5a68;
-    --line: #d8dfe7;
-    --ink: #2E46D1;
-    --amber: #9a6a08;
-    --display: "Figtree", "Segoe UI", system-ui, sans-serif;
-    --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0f1418; --surface: #161d24; --fg: #e3e8ee; --muted: #a5b2bf; --line: #2a3540;
-      --ink: #8496FF; --amber: #e6b552; color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0f1418; --surface: #161d24; --fg: #e3e8ee; --muted: #a5b2bf; --line: #2a3540;
-    --ink: #8496FF; --amber: #e6b552; color-scheme: dark;
-  }
-  body { background: var(--bg); color: var(--fg); font: 17px/1.6 var(--body); }
-  .wrap { max-width: 44rem; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; }
-  header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; }
-  .mark { display: flex; align-items: center; gap: 12px; }
-  .mark svg { width: 44px; height: 44px; flex: none; }
-  .app { font: 700 15px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
-  h1 { font: 700 clamp(28px, 6vw, 40px)/1.15 var(--display); margin: 8px 0 0; text-wrap: balance; }
-  .meta { color: var(--muted); font-size: 15px; }
-  nav.lang { display: flex; gap: 8px; margin: 18px 0 8px; flex-wrap: wrap; }
-  nav.lang a {
-    font: 600 14px/1 var(--display); padding: 9px 14px; border-radius: 999px; text-decoration: none;
-    color: var(--ink); border: 1px solid var(--line); background: var(--surface);
-  }
-  nav.lang a:focus-visible, a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
-  .summary {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .summary strong { color: var(--ink); }
-  section.policy { margin-top: 40px; }
-  section.policy + section.policy { border-top: 1px solid var(--line); padding-top: 32px; }
-  h2 { font: 700 24px/1.25 var(--display); margin: 0 0 6px; text-wrap: balance; }
-  h3 { font: 700 18px/1.3 var(--display); margin: 28px 0 6px; color: var(--ink); }
-  p, ul { margin: 0 0 12px; max-width: 65ch; }
-  ul { padding-left: 1.2em; }
-  li { margin-bottom: 6px; }
-  a { color: var(--ink); }
-  .label { font: 700 12px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
-  table { border-collapse: collapse; width: 100%; font-size: 15px; }
-  .tablewrap { overflow-x: auto; margin: 10px 0 14px; }
-  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { font: 700 13px/1.3 var(--display); color: var(--muted); }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/uberbora.svg" type="image/svg+xml">
 </head>
-<body>
+<body class="app-ubitracker app-page privacy">
+<header class="on-sun">
+  <div class="wrap topbar"><a class="brand" href="../../"><svg viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true"><rect width="32" height="32" fill="#E1C02C"/><path d="M6 6h5v1h-5zM21 6h5v1h-5zM5 7h7v14h-7zM20 7h7v14h-7zM5 21h8v1h-8zM19 21h8v1h-8zM5 22h9v1h-9zM18 22h9v1h-9zM5 23h22v3h-22zM6 26h20v1h-20zM7 27h18v1h-18zM8 28h16v1h-16z"/></svg>uberbora</a></div>
+</header>
 
-<div class="wrap">
-  <header>
-    <div class="mark">
-      <svg viewBox="0 0 108 108" aria-hidden="true">
+<section class="hero-app on-dark pv-hero">
+  <div class="wrap">
+    <a class="appname rm-app" href="../"><svg viewBox="0 0 108 108" aria-hidden="true">
         <rect width="108" height="108" rx="24" fill="#2E46D1"/>
         <rect x="26" y="60" width="11" height="22" rx="3" fill="#A9B5F2"/>
         <rect x="43" y="52" width="11" height="30" rx="3" fill="#A9B5F2"/>
         <rect x="60" y="44" width="11" height="38" rx="3" fill="#A9B5F2"/>
         <path d="M24 56 L44 40 L58 48 L80 28" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M68 27 L81 27 L81 40" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="app">UbiTracker</span>
-    </div>
+      </svg><span>UbiTracker</span></a>
     <h1>Privacy Policy · Gizlilik Politikası</h1>
-    <div class="meta">Effective 9 October 2026 · Yürürlük tarihi: 9 Ekim 2026</div>
+    <p class="small muted">Effective 9 October 2026 · Yürürlük tarihi: 9 Ekim 2026</p>
     <nav class="lang" aria-label="Language">
       <a href="#en">English</a>
       <a href="#tr">Türkçe</a>
     </nav>
-  </header>
+  </div>
+</section>
 
-  <section class="policy" id="en" lang="en">
+<main class="wrap pv-body">
+<section class="policy" id="en" lang="en">
     <span class="label">English</span>
     <h2>Your money stays on your phone</h2>
     <div class="summary">
@@ -161,8 +109,7 @@
     <h3>Changes</h3>
     <p>If this policy changes, the new version is published at this address with a new effective date.</p>
   </section>
-
-  <section class="policy" id="tr" lang="tr">
+<section class="policy" id="tr" lang="tr">
     <span class="label">Türkçe</span>
     <h2>Paranız telefonunuzda kalır</h2>
     <div class="summary">
@@ -237,7 +184,16 @@
     <h3>Değişiklikler</h3>
     <p>Bu politika değişirse yeni sürüm yeni bir yürürlük tarihiyle bu adreste yayımlanır.</p>
   </section>
-</div>
+</main>
 
+<footer class="site on-dark">
+  <div class="wrap row">
+    <a class="brand" href="../../"><svg viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true"><rect width="32" height="32" fill="#E1C02C"/><path d="M6 6h5v1h-5zM21 6h5v1h-5zM5 7h7v14h-7zM20 7h7v14h-7zM5 21h8v1h-8zM19 21h8v1h-8zM5 22h9v1h-9zM18 22h9v1h-9zM5 23h22v3h-22zM6 26h20v1h-20zM7 27h18v1h-18zM8 28h16v1h-16z"/></svg>uberbora</a>
+    <nav aria-label="UbiTracker">
+      <a href="../">UbiTracker</a>
+      <a href="mailto:uberyastudios@gmail.com">uberyastudios@gmail.com</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

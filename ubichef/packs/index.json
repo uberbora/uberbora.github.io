@@ -1,0 +1,32 @@
+{
+ "format": 1,
+ "packs": [
+  {
+   "id": "asya",
+   "version": 1,
+   "title": {
+    "tr": "Asya Mutfakları",
+    "en": "Asian Cuisines"
+   },
+   "desc": {
+    "tr": "Japonya’nın yöresel yemekleri, Çin, Hindistan, Tayland, Vietnam, Endonezya, Filipinler, Malezya ve Özbekistan’dan yemekler, ayrıca Kore pilav yemekleri.",
+    "en": "Regional dishes of Japan, plus China, India, Thailand, Vietnam, Indonesia, the Philippines, Malaysia and Uzbekistan, and Korean rice dishes."
+   },
+   "count": 100,
+   "bytes": 229988,
+   "file": "asya.json",
+   "cuisines": [
+    "jp",
+    "cn",
+    "in",
+    "th",
+    "vn",
+    "id",
+    "my",
+    "ph",
+    "uz",
+    "kr"
+   ]
+  }
+ ]
+}

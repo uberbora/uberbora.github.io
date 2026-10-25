@@ -316,16 +316,19 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 .app-ubichef    { --app: #A8283A; --app-ink: #6E1222; --accent: #A8283A; --tag: #fff; --tag-ink: #6E1222; }
 .app-ubireader  { --app: #1B4B73; --app-ink: #12324D; --accent: #C98516; --tag: #E9A23B; --tag-ink: #1B2A38; }
 .app-ubitracker { --app: #2E46D1; --app-ink: #1A2A8A; --accent: #2E46D1; --tag: #fff; --tag-ink: #1A2A8A; }
+.app-ubiassistant { --app: #17140E; --app-ink: #17140E; --accent: #8A6D00; --tag: #E1C02C; --tag-ink: #17140E; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .app-ubiclipper { --accent: #A788FA; --app: #1D1636; }
   :root:not([data-theme="light"]) .app-ubichef { --accent: #F0A3AD; }
   :root:not([data-theme="light"]) .app-ubireader { --accent: #E9A23B; }
   :root:not([data-theme="light"]) .app-ubitracker { --accent: #8496FF; }
+  :root:not([data-theme="light"]) .app-ubiassistant { --accent: #E1C02C; }
 }
 :root[data-theme="dark"] .app-ubiclipper { --accent: #A788FA; --app: #1D1636; }
 :root[data-theme="dark"] .app-ubichef { --accent: #F0A3AD; }
 :root[data-theme="dark"] .app-ubireader { --accent: #E9A23B; }
 :root[data-theme="dark"] .app-ubitracker { --accent: #8496FF; }
+:root[data-theme="dark"] .app-ubiassistant { --accent: #E1C02C; }
 
 .app-page { --u: clamp(12px, 2.2vw, 22px); }
 .app-page .hero-app.on-dark { background: var(--app); color: #fff; }
@@ -370,6 +373,7 @@ kbd { font: 700 .9em var(--display); background: var(--surface); padding: 1px 6p
 .pv-body th { font: 700 15px/1.3 var(--display); }
 .pv-body section.policy { scroll-margin-top: 16px; max-width: 46rem; }
 .app-ubiclipper .pv-body .label { background: var(--accent); color: #120A2A; }
+.app-ubiassistant .pv-body .label { background: var(--tag); color: var(--tag-ink); }
 
 /* ---------------------------------------------------------------- small screens */
 @media (max-width: 880px) {

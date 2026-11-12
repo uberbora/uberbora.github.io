@@ -14,8 +14,12 @@ assets/uberbora.svg/.png   logo
 .well-known/assetlinks.json   Android app links for UbiChef
 ```
 
-Each app's pages carry `<body class="app-<app> app-page">`, which sets its colour
-(`--app`, `--accent`) in `site.css`. Heroes and home bands end in the stepped bottom of the U.
+The look is the Ubi design system (the same as the apps): Bricolage Grotesque for
+titles and big numbers, Figtree for text, DM Mono for small uppercase labels, white
+cards with 1px lines, and one accent colour per app. Each app's pages carry
+`<body class="app-<app> app-page">`, which points the role variables (`--bg`,
+`--surface`, `--accent` …) at that app's colours in `assets/site.css`; the home page
+uses the site's own black and yellow. Light and dark follow the visitor's setting.
 
 New app: add a band to `index.html`, an `app-<app>` colour block in `site.css`, an
 `<app>/` page and an `<app>/privacy/` page. Texts are
